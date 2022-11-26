@@ -1,1 +1,58 @@
-!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">	<head>		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>		<title>爱心</title>		<meta name="description" content="change OR Die"/>		<style>			html,			body {				height: 100%;				padding: 0;				margin: 0;				background:black;			}			canvas {				position: absolute;				width: 100%;				height: 100%;			}			.heart {				width: 20px;				height: 20px;				position: absolute;			}			.heart img {				width: 20px;				height: 20px;			}			.main {				text-align: center;				border-radius: 20px;				width: 100%;				height: 60px;				margin: auto;				position: absolute;				top: 0;				left: 0;				right: 1;				bottom:0px;			}			.main h1 {				color:pink;			}			body{				width:100vw;				height:100vh;				display:flex;				align-items: center;				justify-content: center;				justify-content: center;				overflow:hidden;			}			/* .yinyue{				width:20px;				height:10px;				text-align: center;			} */		</style>	</head>	<body>		</style>		<canvas id="pinkboard" width="805" height="946">			Canvas Not Support		</canvas>		<canvas id="sakura"></canvas>		<font size="6" color="pink">			<marquee width="160px" direction="left" scrollamount="5">我爱你</marquee>			<marquee direction="down" scrollamount="5" class="down">你存在的本身,便是我的神迹</marquee>			<marquee direction="left" scrollamount="5">你的声音里,满是我们将要创造的美好回忆</marquee>			<marquee direction="right" scrollamount="5">相识的开始:10月13日</marquee>			<marquee direction="left" scrollamount="6">喜欢的颜色:蓝色</marquee>			<marquee direction="right" scrollamount="7">喜欢狗子</marquee>			<marquee direction="left" scrollamount="8">星座:射手座</marquee>			<marquee direction="right" scrollamount="9">陪你这条路有多远我就走多久,毫无怨言绝不邹下眉头</marquee>			<marquee direction="left" scrollamount="1">生肖羊</marquee>			<marquee direction="right" scrollamount="3">你的纯在,及是我所爱</marquee>			<marquee direction="left" scrollamount="4">出演的是纯爱篇,这次铁定了心要幸福</marquee>			<marquee direction="right" scrollamount="5">希望这次我们是必胜局</marquee>			<marquee direction="left" scrollamount="6">为你着迷日久情深</marquee>			<marquee direction="right" scrollamount="7">真正的爱情,没有一辈子的浪漫,只有一辈子的温暖,				没有一辈子的缠绵,只有一辈子的陪伴</marquee>			<marquee direction="left" scrollamount="8">落日余晖的路上总是爱意弥漫</marquee>			<marquee direction="right" scrollamount="2">这世界的美好还是想和你一起看</marquee>			<marquee direction="left" scrollamount="1">那片海的浪不会停,我对你的爱也是</marquee>			<marquee direction="right" scrollamount="3">陪你看落日的人比日落本身更浪漫</marquee>			<marquee direction="left" scrollamount="4">相遇不容易,我们不能输在时间上了</marquee>			<marquee direction="right" scrollamount="5">没有天生适合的两个人,只有不断靠近的两颗星</marquee>			<marquee direction="left" scrollamount="6">在我这里你永远胜过别人</marquee>			<marquee direction="right" scrollamount="7">我要陪你从新鲜感走到归属感</marquee>			<marquee direction="left" scrollamount="8">你来了爱也来了</marquee>			<marquee direction="right" scrollamount="2">一见钟情是开始,日久情深是延续</marquee>			<marquee direction="left" scrollamount="1">聪明的男人都是把女朋友当宝宝宠的</marquee>		</font>		<div class="main">			<h1>				F M L				<br>				<audio src="./img/喜欢你.mp4" autoplay loop></audio>				<!-- <br> -->				I Love You			</h1>		</div>		<script>			var oDivs = document.querySelectorAll(".heart")			document.onmousemove = function(event) {				var event = event || window.event;				oDivs[0].style.top = event.clientY + "px";				oDivs[0].style.left = event.clientX + "px";				for (var i = oDivs.length - 1; i > 0; i--) {					oDivs[i].style.top = oDivs[i - 1].offsetTop + "px";					oDivs[i].style.left = oDivs[i - 1].offsetLeft + "px";				}			}			document.onmousedown = function(event) {				console.log(new Date().getSeconds());			}		</script>		<script>			var settings = {				particles: {					length: 500,					duration: 2,					velocity: 100,					effect: -0.75,					size: 50,				},			};			(function() {				var b = 0;				var c = ["ms", "moz", "webkit", "o"];				for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {					window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];					window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] +						"CancelRequestAnimationFrame"]				}				if (!window.requestAnimationFrame) {					window.requestAnimationFrame = function(h, e) {						var d = new Date().getTime();						var f = Math.max(0, 16 - (d - b));						var g = window.setTimeout(function() {							h(d + f)						}, f);						b = d + f;						return g					}				}				if (!window.cancelAnimationFrame) {					window.cancelAnimationFrame = function(d) {						clearTimeout(d)					}				}			}());			var Point = (function() {				fun
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>WebCat</title>
+	<script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/wc-3.0.6.min.js"></script>
+  </head>
+  <body>		
+    <div id="main"></div>
+    <div id="footer">
+      <input id="sendText" type="text" placeholder="请输入内容"/>
+      <input id="sendButton" type="button" value="发送"/>
+    </div>
+    <script>
+      wc.alertDialog({
+        content: "欢迎体验聊天机器人，更多源码请加WebCat官方QQ群：879941599",
+        ok: "加群",
+        okFun: function(){
+          wc.goQQGroup("879941599");
+        }
+      });
+      $("#sendButton").click(function(){
+        var str = $("#sendText").val();
+        if(str == ""){
+          return;
+        }
+        addMessage(0, str);
+        $("#sendText").val("");
+        $.ajax({
+          url: "http://api.qingyunke.com/api.php?key=free&appid=0&msg=" + str,
+          async: true,
+          type: "get",
+          dataType: "json",
+          success: function(result){
+            addMessage(1, result.content);
+          },
+          error: function(err){
+            //alert(JSON.stringify(err));
+          }
+        });
+      });  
+    
+      function addMessage(type, message){
+        var reg = new RegExp("{br}","g");
+        var message = message.replace(reg, "</br>");
+        if(type == 1){
+          $("#main").append("<div class='item'><div class='item-left'>" + message + "</div></div>");
+        } else{
+          $("#main").append("<div class='item'><div class='item-right'>" + message + "</div></div>");
+        }
+        $('#main').scrollTop($('#main')[0].scrollHeight);
+      }   
+      $("#main").css("max-height", $(window).height()-50);     
+    </script> 
+  </body>
+</html>
